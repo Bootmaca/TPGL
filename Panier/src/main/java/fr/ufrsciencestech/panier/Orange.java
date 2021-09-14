@@ -66,7 +66,7 @@ public class Orange {
         //Ecrire ici vos tests
         Orange uneOrange = new Orange();
         System.out.println(uneOrange.toString());
-        Orange uneOrange2 = new Orange(10, "franceeeeeeeeeeeeeeeeeeeeeee");
+        Orange uneOrange2 = new Orange(10, "franceeeeeeeeeeeeeeeeeeeeeeee");
         System.out.println(uneOrange2.toString());
    }
 }
