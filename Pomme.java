@@ -64,7 +64,7 @@ public class Pomme {
         //Ecrire ici vos tests
         Pomme unePomme = new Pomme();
         System.out.println(unePomme.toString());
-        Pomme unePomme2 = new Pomme(10, "france");
+        Pomme unePomme2 = new Pomme(10, "franceeeeeee");
         System.out.println(unePomme2.toString());
    }
 }
