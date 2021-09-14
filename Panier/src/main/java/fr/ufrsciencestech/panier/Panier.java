@@ -143,7 +143,7 @@ public class Panier {
         p1.ajout(fr2);
 	}
 	catch (PanierPleinException ex){
-		System.out.println("Panier plein !");
+		System.out.println("Panier pleinnnnnnnnnnnnnnnnnn !");
 	}
 
 	System.out.println("--- fin test retrouver fruit ---");
