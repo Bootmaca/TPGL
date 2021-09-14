@@ -1,3 +1,5 @@
+package fr.ufrsciencestech.panier;
+
 public class Fraise implements Fruit{
     private double prix;
     private String origine;

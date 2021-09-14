@@ -1,3 +1,9 @@
+package fr.ufrsciencestech.panier;
+
+import fr.ufrsciencestech.panier.PanierPleinException;
+import fr.ufrsciencestech.panier.PanierPleinException;
+import fr.ufrsciencestech.panier.PanierVideException;
+import fr.ufrsciencestech.panier.PanierVideException;
 import java.util.*;
 /**
  *
