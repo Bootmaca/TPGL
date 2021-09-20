@@ -1,16 +1,20 @@
-package fr.ufrsciencestech.panier;
+package fr.ufrsciencestech.panier.model;
 
-public class Fraise implements Fruit{
+/**
+ *
+ * @author roudet
+ */
+public class Pomme {
     private double prix;
     private String origine;
 	
-    public Fraise() 
+    public Pomme() 
     {
         this.prix = 0.5;  //prix en euros
         this.origine="Espagne";
     }
     
-    public Fraise(double prix, String origine) 
+    public Pomme(double prix, String origine) 
     {
 	if(prix < 0)
 	    this.prix = -prix;  //une solution possible pour interdire les prix negatifs
@@ -41,25 +45,28 @@ public class Fraise implements Fruit{
 
     @Override
     public String toString(){
-        return "Fraise de " + origine + " a " + prix + " euros";
+        return "Pomme de " + origine + " a " + prix + " euros";
     }
 
     @Override
-    public boolean equals(Object o){  //predicat pour tester si 2 oranges sont equivalentes
+    public boolean equals(Object o){  //predicat pour tester si 2 Pommes sont equivalentes
         if(o != null && getClass() == o.getClass()){
-            Fraise or = (Fraise) o;
+            Pomme or = (Pomme) o;
             return (prix == or.prix && origine.equals(or.origine));
         }
         return false;
     }
 
-    public boolean isSeedless() {  //predicat indiquant qu'une orange a des pepins
+    public boolean isSeedless() {  //predicat indiquant qu'une Pomme a des pepins
         return false;
     }
 
 
     public static void main (String[] args){
         //Ecrire ici vos tests
-	System.out.println("premier test Fraise");
+        Pomme unePomme = new Pomme();
+        System.out.println(unePomme.toString());
+        Pomme unePomme2 = new Pomme(12, "france");
+        System.out.println(unePomme2.toString());
    }
 }

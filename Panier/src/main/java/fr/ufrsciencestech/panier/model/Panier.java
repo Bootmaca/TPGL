@@ -1,9 +1,9 @@
-package fr.ufrsciencestech.panier;
+package fr.ufrsciencestech.panier.model;
 
-import fr.ufrsciencestech.panier.PanierPleinException;
-import fr.ufrsciencestech.panier.PanierPleinException;
-import fr.ufrsciencestech.panier.PanierVideException;
-import fr.ufrsciencestech.panier.PanierVideException;
+import fr.ufrsciencestech.panier.model.PanierPleinException;
+import fr.ufrsciencestech.panier.model.PanierPleinException;
+import fr.ufrsciencestech.panier.model.PanierVideException;
+import fr.ufrsciencestech.panier.model.PanierVideException;
 import java.util.*;
 /**
  *
@@ -91,7 +91,12 @@ public class Panier {
 
     //groupe 5
     public void retrait() throws PanierVideException{ //retire le dernier fruit du panier si celui-ci n'est pas vide
-     
+     if (fruits.size() == 0){
+		throw new PanierVideException();
+	}else{
+                int nbrfruit = fruits.size();
+		fruits.remove(nbrfruit-1);
+	}
     }
 
     //groupe 6
@@ -136,23 +141,19 @@ public class Panier {
 	}
 	
 	System.out.println("--- fin test ajout panier ---");
-
-    //groupe 3
-    System.out.println("--- test retrouver fruit ---");
-	Panier p1 = new Panier(2);
-	Fraise fr1 = new Fraise();
-    Fraise fr2 = new Fraise();
-
-	try{
-		p1.ajout(fr1);
-        p1.ajout(fr2);
-        p1.ajout(fr2);
-	}
-	catch (PanierPleinException ex){
-		System.out.println("Panier pleinnnnnnnnnnnnnnnnnn !");
-	}
-
-	System.out.println("--- fin test retrouver fruit ---");
+        
+        try{
+            vide.retrait();
+        }catch (PanierVideException e){
+            System.out.println("Le retrait n'est pas possible");
+        }
+        
+        try{
+            p.retrait();
+            System.out.println("retrait effectué");
+        }catch (PanierVideException e){
+            System.out.println("Le retrait n'est pas possible");
+        }
 
     }
 }
