@@ -1,15 +1,13 @@
 package fr.ufrsciencestech.panier.model;
 
-import fr.ufrsciencestech.panier.model.PanierPleinException;
-import fr.ufrsciencestech.panier.model.PanierPleinException;
-import fr.ufrsciencestech.panier.model.PanierVideException;
-import fr.ufrsciencestech.panier.model.PanierVideException;
+import fr.ufrsciencestech.panier.model.Fraise;
+import fr.ufrsciencestech.panier.model.Fruit;
 import java.util.*;
 /**
  *
  * @author roudet
  */
-public class Panier {
+public class Panier extends Observable{
     private ArrayList<Fruit> fruits;  //attribut pour stocker les fruits
     private int contenanceMax;        //nb maximum d'oranges que peut contenir le panier
 	
@@ -34,7 +32,7 @@ public class Panier {
     }
 
     public int getTaillePanier(){  //accesseur retournant la taille allouee pour l'attibut fruits
-        return 0;
+        return this.fruits.size();
     }
     
     public int getContenanceMax(){  //accesseur du second attribut
@@ -86,7 +84,9 @@ public class Panier {
 	else 
 	{
 		fruits.add(o);
-	}
+                setChanged();                //marks this Observable object as having been changed; the hasChanged method will now return true
+                notifyObservers(getTaillePanier());   //if this object has changed, as indicated by the hasChanged method, then notify all of its observers and then call the clearChanged method to indicate that this object has no longer changed
+    }
     }
 
     //groupe 5
@@ -95,7 +95,8 @@ public class Panier {
 		throw new PanierVideException();
 	}else{
                 int nbrfruit = fruits.size();
-		fruits.remove(nbrfruit-1);
+		fruits.remove(nbrfruit-1);setChanged();                //marks this Observable object as having been changed; the hasChanged method will now return true
+                notifyObservers(getTaillePanier());   //if this object has changed, as indicated by the hasChanged method, then notify all of its observers and then call the clearChanged method to indicate that this object has no longer changed
 	}
     }
 

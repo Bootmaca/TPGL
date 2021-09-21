@@ -1,10 +1,12 @@
 package fr.ufrsciencestech.panier.model;
 
+import fr.ufrsciencestech.panier.model.Fruit;
+
 /**
  *
  * @author roudet
  */
-public class Pomme {
+public class Pomme implements Fruit{
     private double prix;
     private String origine;
 	

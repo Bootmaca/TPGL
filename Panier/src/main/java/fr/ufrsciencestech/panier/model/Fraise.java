@@ -1,7 +1,5 @@
 package fr.ufrsciencestech.panier.model;
 
-import fr.ufrsciencestech.panier.model.Fruit;
-
 public class Fraise implements Fruit{
     private double prix;
     private String origine;
