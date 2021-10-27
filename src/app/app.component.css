@@ -279,7 +279,7 @@ svg#clouds {
   }
 
   svg#rocket-smoke {
-    right: 120px;
+    right: 125px;
     transform: rotate(-5deg);
   }
 }
