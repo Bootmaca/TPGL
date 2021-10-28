@@ -2,6 +2,8 @@ CREATE DATABASE BurgerProject;
 
 USE BurgerProject;
 
+/* TABLE Utilisateur */
+
 CREATE TABLE Utilisateur(
 	idUtil INTEGER(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	nom VARCHAR(50),
