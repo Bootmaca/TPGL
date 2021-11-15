@@ -53,7 +53,7 @@ INSERT INTO Dessert(idDessert, libelle, prix, image)
   VALUES
     (1,"Muffin", 3.50, "url/image"),
     (2,"Tiramissu", 4.00, "url/image"),
-    (3,"Donnut", 2.50, "url/image"),
+    (3,"Donnut", 2.00, "url/image"),
     (4,"Magnum", 3.50, "url/image");
 
 INSERT INTO Frite(idFrite, libelle, prix, image)
